@@ -84,11 +84,13 @@ int main() {
     srand(time(0));
 
     // Tamaño del laberinto
-    int n = 10;
+    int n;
+    cout << "Ingrese el tamaño del laberinto: ";
+    cin >> n;
     vector<vector<int>> maze = generate_maze_with_path(n);
 
     // Imprimir el laberinto generado
-    cout << "Generated Maze:" << endl;
+    cout << "Laberinto generado:" << endl;
     for (const auto& row : maze) {
         for (int cell : row) {
             cout << cell << " ";
@@ -100,13 +102,17 @@ int main() {
     vector<string> paths = find_Path(maze, n, 1);
 
     // Imprimir los caminos encontrados
-    cout << "\nPaths Found:" << endl;
+    cout << "\nCaminos encontrados:" << endl;
     for (const auto& path : paths) {
         cout << path << endl;
     }
 
     return 0;
 }
+
+
+
+
 
 
 
